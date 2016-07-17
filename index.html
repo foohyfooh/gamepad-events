@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gamepad Events Demo</title>
+</head>
+<body>
+  <div id="events"></div>
+  <script src="gamepad-events.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    const events = document.querySelector("#events");
+    addEventListener("gamepad_button_pressed", e => {
+      events.innerHTML = "Press Event: " + JSON.stringify(e.detail) + "<br>" + events.innerHTML;
+      console.log(e.detail);
+    });
+
+    addEventListener("gamepad_button_released", e => {
+      events.innerHTML = "Release Event: " + JSON.stringify(e.detail) + "<br>" + events.innerHTML;
+      console.log(e.detail);
+    });
+
+    addEventListener("gamepad_axis_moved", e => {
+      events.innerHTML = "Axis Event: " + JSON.stringify(e.detail) + "<br>" + events.innerHTML;
+      console.log(e.detail);
+    });
+  </script>
+</body>
+</html>
