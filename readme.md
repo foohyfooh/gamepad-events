@@ -20,7 +20,7 @@ button   | The button pressed or released
 pressed  | If the button is pressed or released
 value    | The value indicating the magnitude to which the button is pressed or released
 
-### ganepad_axis_moved
+### gamepad_axis_moved
 Property | Description
 ---      | ---
 gamepad  | The index of the gamepad that fired the event
