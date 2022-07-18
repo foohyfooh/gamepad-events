@@ -16,10 +16,6 @@
       "axes": axes,
       "buttons": buttons
     }
-    // return {
-    //   "axes": new Array(gamepad.axes.length).fill(0),
-    //   "buttons": new Array(gamepad.buttons.length).fill(0)
-    // };
   }
 
   function pollGamepad(){
@@ -28,6 +24,7 @@
       if(gamepads[g] === undefined) continue;
       if(cachedGamepads[g] === undefined) {
         cachedGamepads[g] = cloneGamepad(gamepads[g]);
+        continue;
       }
       let gamepad = gamepads[g], cachedGamepad = cachedGamepads[g];
 
@@ -79,6 +76,5 @@
     window.requestAnimationFrame(pollGamepad);
   }
 
-  // setInterval(pollGamepad, 1000 / 60);
   window.requestAnimationFrame(pollGamepad);
 })();
